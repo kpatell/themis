@@ -3,9 +3,9 @@ const Element = require('../models/element.model.js');
 // Create and Save a new element
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.content) {
+    if (!req.body) {
         return res.status(400).send({
-            message: "Element content can not be empty"
+            message: "Element body can not be empty"
         });
     }
 
@@ -64,9 +64,9 @@ exports.findOne = (req, res) => {
 // Update an element identified by the elementId in the request
 exports.update = (req, res) => {
     // Validate Request
-    if(!req.body.content) {
+    if(!req.body) {
         return res.status(400).send({
-            message: "Element content can not be empty"
+            message: "Element body can not be empty"
         });
     }
 
