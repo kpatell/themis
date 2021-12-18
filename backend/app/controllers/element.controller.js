@@ -72,9 +72,9 @@ exports.update = (req, res) => {
 
     // Find note and update it with the request body
     Element.findByIdAndUpdate(req.params.elementId, {
-        name: req.body.name || "Test Name", 
-        email: req.body.email || "test@gmail.com", 
-        phone_number: req.body.phone_number || "XXX-XXX-XXXX"
+        name: req.body.name, 
+        email: req.body.email, 
+        phone_number: req.body.phone_number
     }, {new: true})
     .then(element => {
         if (!element) {
@@ -82,7 +82,7 @@ exports.update = (req, res) => {
                 message: "Element not found with id " + req.params.elementId
             });
         }
-        res.send(note);
+        res.send(element);
     }).catch(err => {
         if (err.kind === 'ObjectId') {
             return res.status(404).send({
