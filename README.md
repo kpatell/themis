@@ -31,6 +31,6 @@ This is a README specifically for the backend, how to get it running, how to int
 - /server.js - main server file that consolidates endpoints and hosts them on port 3001
 - /app - contains API endpoints, schemas, and functionality
   - /controllers - endpoint functionality which communicates with the database
-  - /models - schemas for each data object (error message, result, question, testcase, user)
+  - /models - schemas for each data object
   - /routes - lists each endpoint available, connects to /controllers for functionality
 - /config - Database configuration file

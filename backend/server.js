@@ -28,11 +28,11 @@ mongoose.connect(dbConfig.url, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to Themis. Virtual Queuing made easy"});
+    res.json({"message": "Welcome to Themis. Virtual Queuing made easy."});
 });
 
 // Require queue routes
-require('./app/routes/element.routes.js')(app);
+require('./app/routes/queue.routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {
