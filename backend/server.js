@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // Require queue routes
-require('./app/routes/queue.routes.js')(app);
+require('./app/routes/element.routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {
