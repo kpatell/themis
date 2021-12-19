@@ -2,5 +2,5 @@
 // https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
 
 module.exports = {
-    url: 'mongodb://localhost:27017/themis'
+    url: 'mongodb+srv://test:SzBoATP4aZB5XUV2@themis.cwvd0.mongodb.net/themis'
 }
