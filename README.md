@@ -1,6 +1,6 @@
 # Themis
 
-Welcome to <a href="https://themis.kssolutionsllc.com/" target="_blank">Themis</a>. Virtual queuing made easy.
+Welcome to <a href="https://themis.kssolutionsllc.com/" target="_blank" rel="noopener noreferrer">Themis</a>. Virtual queuing made easy.
 
 ## Repo Structure
 
