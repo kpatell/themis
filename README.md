@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Backend README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a README specifically for the backend, how to get it running, how to interact with it, and anything else worth knowing.
 
-## Available Scripts
+## Steps to get backend running properly:
 
-In the project directory, you can run:
+- In the 'backend' folder (themis/backend), run `npm install` in the terminal. This should add a 'node_modules' folder
+- These should be installed, but confirm you have the following modules: express, body-parser, mongoose
+- Version 4.4 of MongoDB is being used (mongodb-community@4.4). To install, click [here](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/) for a mac installation guide
+- FOR MAC: Remember to run `mongod --config /usr/local/etc/mongod.conf --fork` after following the installation guide above to start running the database
+- Test your setup by running `node server.js` in the backend folder, you should get the following messages:
+  - Server is listening on port 3000
+  - Successfully connected to the database
 
-### `npm start`
+## Steps to insert a new schema into the API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Create a model for the schema
+  - Add a file called <schema_name>.model.js into the 'models' folder
+  - Populate this file based on the other model files already in the folder
+- Create api routes for this schema
+  - Add a file called <schema_name>.routes.js in the 'routes' folder
+  - Follow the structure of existing routes files, be sure to implement the find, findOne, findOneAndUpdate, insertOne, and save functions
+- Create the controller for this schema to flesh out the methods defined in the routes file
+  - Add a file called <schema_name>.controller.js in the 'controllers' folder
+  - Follow the structure of other files already existing in this folder
+- Add the following code to 'server.js'
+  - `require('./app/routes/<schema_name>.routes.js')(app);`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Backend File Structure
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- /server.js - main server file that consolidates endpoints and hosts them on port 3001
+- /app - contains API endpoints, schemas, and functionality
+  - /controllers - endpoint functionality which communicates with the database
+  - /models - schemas for each data object
+  - /routes - lists each endpoint available, connects to /controllers for functionality
+- /config - Database configuration file

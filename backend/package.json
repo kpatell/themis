@@ -1,0 +1,32 @@
+{
+  "name": "themis",
+  "version": "1.0.0",
+  "description": "Virtual queuing made easy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpatell/themis.git"
+  },
+  "keywords": [
+    "Express",
+    "RestAPI",
+    "MongoDB",
+    "Mongoose",
+    "Themis"
+  ],
+  "author": "krishan patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kpatell/themis/issues"
+  },
+  "homepage": "https://github.com/kpatell/themis#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.2"
+  }
+}
