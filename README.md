@@ -9,7 +9,7 @@ Welcome to <a href="https://themis.kssolutionsllc.com/" target="_blank" rel="noo
 
 ## Frontend
 
-[front-end readme - to be implemented](client/README.md)
+[front-end readme - to be implemented](frontend/README.md)
 
 ## Backend
 
