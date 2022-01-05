@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo/*, useState, useEffect*/ } from "react";
 
 import UserForm from './components/UserForm.js';
 import Table from './components/Table.js';
@@ -15,7 +15,7 @@ export const App = () => {
             },
             {
                 Header: 'Name',
-                accessor: 'name', // accessor is the "key" in the data
+                accessor: 'name',
             },
             {
                 Header: 'Email',
@@ -32,7 +32,7 @@ export const App = () => {
     return (
         <div id='main'>
             <UserForm />
-            <Table columns={columns} /*data={data}*/ />
+            <Table columns={columns} data={[1, 2, 3]} />
 
         </div>
     );
